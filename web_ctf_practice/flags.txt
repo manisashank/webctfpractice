@@ -1,0 +1,10 @@
+1. KEY{YOURFIRSTKEY}
+2. KEY{YourSecondKey}
+3. KEY{999ProblemsButAReloadAint1
+4. KEY{WowSuchShibeWow}
+5. KEY{HackThePlanetKEY}
+6. KEY{GodIHopeYouScriptedThis}
+7. KEY{WelcomeToTheMatrix}
+8. KEY{SecretCodesWithXorsAren'tVerySecret}
+9. KEY{AreYouAMathMajor?}
+

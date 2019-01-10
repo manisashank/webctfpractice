@@ -1,0 +1,41 @@
+This is a write up for the website "ctf.slothparadise.com" here the author hid 10 flags and it is a very good website for getting started in CTF's in web sections. 
+1.Ok now when you open the website you will find your first flag there itself. From here you can get to that the keys are in the form of format KEY{}. 
+
+2.According to me it is always good practise to see the source code of the page so there you find the second key for this you just visit the source code of the home page and now we can use find option. Now for this press ctrl+F then a search box appears infront of you there type KEY since it is the pattern of the flags so if we find a match in the soutce code we may expect a flag but we can't tell it for sure. So now we have two flags.
+
+3.Now for your third flag open the about page of the website there yoou can see the author of the website and since it is always a good thing to check out the source code of the webpage. When we check we get to know the path of the image of the author we see on the about page and the path seems to be like /images/allan.jpg so we visit this link then we get the image of the author now we remove the allan.jpg from the link and hit enter then we can find other image name and when we click on that image we get another flag.
+
+4.In the about page when you visit you see in the bottom line "you are a 8001th visitor to this page. Every thousandth visitor gets a prize." from this we can understand that we should become a thousandth visitor to get the flag. Since we can't refresh the page for 1000 times or exactly to say 999 times we use a script to write it ...
+
+
+about.py 
+
+
+
+now run the script and wait for some time it may take some time so be patient. Then you get the flag here in the output of the script...
+
+5.Now when we say the source code of the home webpage we find something hidden.html commented so try opening it by typing /hidden.html after the website link then we get something like forbidden like that so we use hidden.php. Then we get something like "welcome but your aren't the admin" so what we do for this is openthe developer console and mine is kali I find the cookies of the website at memory there we find a cookie with name user and value unknown so now what we do is change the value to admin and then refresh the webpage and we get the flag on the webpage directly.
+
+6.Now move on to Walled Garden first it says we should solve 1024 captcha's to get the flag and it asks for a name and gives us a captcha if we solve one captcha we get another in the same way process repeats but since we can't solve 1024 captcha we script this by using python...
+
+
+Walled_garden.py
+
+
+
+so now we have overall 6 flags.....
+7. After this again go to the hidden.php file there we find in the last line as here are the documents you asked for like that and I downloaded them and they with the name hardstuff.zip and after downloading unzip them and now we find a folder with name hardstuff and when we enter into the folder we find a text file with name welcome.txt and when we open it we find another flag in it.
+
+8. Now open the encryption folder we find a python script with ciphertext as some text since it has == atlast we can guess it can be a base64 encoding  but when we change to text directly we get some rubbish so what we do is we change the given base64 to decimal numbers and from  the script we can say that first the flag is converted into its ascii number and then xored with some other key and then we get ciphertext ascii number and then that is converted into character. So now since we already have the ascii decimal values of base64 encoded string and we also know the flag has it's first character as K so what I did is ord('K')^decimal ascii value of first letter after converting the ciphertext to text = the key we need to decrypt ascii decimal value. Now by using this we write a script for getting the flag the script is as follows..
+
+
+script.py 
+
+
+
+thus we get the flag...
+
+
+9. In the folder hardstuff we find another folder with name scripts and in that we find numbers.py and in that after observing we can say we need to divide the number 18243150071292141317265306851 into 2 numbers but the first number can't be 1 and first number can't be greater than second number. So for this we have number of websites in online to find but for this task I used factordb.com and from I got 2 factors and I changed the permissions of the scripts to executables and executed the scripts with the got numbers and so finally I got the flag....
+
+So now we have 9/10 flags....
